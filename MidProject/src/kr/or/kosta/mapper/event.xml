@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="event">
+  	<select id="exist" resultType="int">
+  		select count(*) cnt from event
+  		where event_end_date <![CDATA[ >= ]]> sysdate and event_start_date <![CDATA[ <= ]]>sysdate
+  	</select>
+  	<select id="show" resultType="String">
+  			select event_image from event
+  			where event_end_date<![CDATA[ >=]]> sysdate and event_start_date<![CDATA[ <= ]]>sysdate
+  	</select>
+  </mapper>
